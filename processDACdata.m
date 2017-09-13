@@ -143,10 +143,6 @@ for iFile = 1:nFile
     profPresAdjustedError = netcdf.getVar(fid,val);
     profPresAdjustedError = double(profPresAdjustedError);
     profPresAdjustedError = profPresAdjustedError(:,1);
-    
-    val = netcdf.inqVarID(fid,'DIRECTION');
-    profDir = netcdf.getVar(fid,val);
-    profDir = profDir(1);
 
     netcdf.close(fid);
 
@@ -162,7 +158,7 @@ for iFile = 1:nFile
         continue; % Reject profiles with large (> 200 db) pressure jumps
     end
     
-    if profDir == 'D' || sum(profPresAdjustedError >= 20) > 0
+    if sum(profPresAdjustedError >= 20) > 0
         if mod(iFile,progInterval) == 0
             parfor_progress;
         end
@@ -170,8 +166,8 @@ for iFile = 1:nFile
     end
 
     % If entry is 1, then that value is bad
-    profPosQCBoolean = ~(double(profPosQC) == double('1') | double(profPosQC) == double('2'))';
-    profJulDayQCBoolean = ~(double(profJulDayQC) == double('1') | double(profJulDayQC) == double('2'))';
+    profPosQCBoolean = ~(double(profPosQC) == double('1') | double(profPosQC) == double('2'));
+    profJulDayQCBoolean = ~(double(profJulDayQC) == double('1') | double(profJulDayQC) == double('2'));
     profPresQCBoolean = ~(double(profPresQC) == double('1') | double(profPresQC) == double('2') | double(profPresQC) == double(' '));
     profTempQCBoolean = ~(double(profTempQC) == double('1') | double(profTempQC) == double('2') | double(profTempQC) == double(' '));
     profPsalQCBoolean = ~(double(profPsalQC) == double('1') | double(profPsalQC) == double('2') | double(profPsalQC) == double(' '));
