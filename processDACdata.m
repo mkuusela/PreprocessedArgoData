@@ -243,7 +243,6 @@ profLongAggr = (profLongAggr < 20).*(360 + profLongAggr) + (profLongAggr >= 20).
 
 save('./Data/Argo_data_aggr.mat','startYear','endYear','nProf','profLatAggr','profLongAggr','profYearAggr','profMonthAggr','profJulDayAggr','profFloatIDAggr','profCycleNumberAggr','profModeAggr','profPresAggr','profTempAggr','profPsalAggr','-v7.3');
 
-%%
 % Compress to save space
 cd('./Data/');
 system('tar -cvzf Argo_data_aggr.tar.gz Argo_data_aggr.mat');
