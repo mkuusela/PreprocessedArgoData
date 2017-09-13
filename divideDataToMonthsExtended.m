@@ -70,7 +70,7 @@ for iMonth=1:12
 
     nProf = sum(idx);
 
-    save(['./Data/Argo_data_aggr_',num2str(month,'%02d'),'_extended.mat'],'startYear','endYear','nProf','profLatAggr','profLongAggr','profYearAggr','profFloatIDAggr','profCycleNumberAggr','profJulDayAggr','profPresAggr','profTempAggr','profPsalAggr');
+    save(['./Data/Extended/Argo_data_aggr_',num2str(month,'%02d'),'_extended.mat'],'startYear','endYear','nProf','profLatAggr','profLongAggr','profYearAggr','profFloatIDAggr','profCycleNumberAggr','profJulDayAggr','profPresAggr','profTempAggr','profPsalAggr');
 
 end
 
