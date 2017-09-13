@@ -17,6 +17,7 @@ profLatAggr = profLatAggr(idx);
 profLongAggr = profLongAggr(idx);
 profJulDayAggr = profJulDayAggr(idx);
 profFloatIDAggr = profFloatIDAggr(idx);
+profCycleNumberAggr = profCycleNumberAggr(idx);
 
 nProf = sum(idx);
 
@@ -49,9 +50,10 @@ profLatAggr = profLatAggr(idx);
 profLongAggr = profLongAggr(idx);
 profJulDayAggr = profJulDayAggr(idx);
 profFloatIDAggr = profFloatIDAggr(idx);
+profCycleNumberAggr = profCycleNumberAggr(idx);
 
 nProf = sum(idx);
 
 %%
 
-save(['./My_data/Argo_data_aggr_',num2str(month,'%02d'),'_extended.mat'],'startYear','endYear','nProf','profLatAggr','profLongAggr','profYearAggr','profFloatIDAggr','profJulDayAggr','profPresAggr','profTempAggr','profPsalAggr');
+save(['./My_data/Argo_data_aggr_',num2str(month,'%02d'),'_extended.mat'],'startYear','endYear','nProf','profLatAggr','profLongAggr','profYearAggr','profFloatIDAggr','profCycleNumberAggr','profJulDayAggr','profPresAggr','profTempAggr','profPsalAggr');
